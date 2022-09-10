@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/style.css" />
+        <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <script defer type="module" src="./script.js"></script>
+        <title>Note taking app</title>
+    </head>
+    <body>
+        <div class="noteInfo__wrapper hide">
+            <div class="noteInfo">
+                <button class="noteInfo__close">&times;</button>
+                <h2 class="title"></h2>
+                <p class="content"></p>
+            </div>
+        </div>
+        <div class="createTask__wrapper hide">
+            <button class="btn createTask__close">&times;</button>
+            <form class="createTask">
+                <input type="text" id="title" placeholder="Enter title" />
+                <div class="category">
+                    <p>Select Category:</p>
+                    <select name="list" id="categoryList">
+                        <option value="Task">Task</option>
+                        <option value="Random Thought">Random Thought</option>
+                        <option value="Idea">Idea</option>
+                    </select>
+                </div>
+
+                <textarea
+                    type="text"
+                    id="content"
+                    cols="40"
+                    rows="10"
+                    placeholder="Enter content"
+                ></textarea>
+
+                <button class="btn" type="submit">submit</button>
+            </form>
+        </div>
+        <h1>Note taking app</h1>
+        <button class="btn showModal">create note</button>
+        <div class="note note__top">
+            <span hidden>1</span>
+            <h3>Name</h3>
+            <h3>Created</h3>
+            <h3>Content</h3>
+            <h3>Category</h3>
+            <div><h3>Dates</h3></div>
+            <h3></h3>
+            <h3></h3>
+            <button class="deleteAll">Delele all</button>
+        </div>
+        <main class="notesList"></main>
+
+        <section class="statistics">
+            <div class="stat stat__task">
+                <h3>Task</h3>
+
+                <div>
+                    <p>Active:</p>
+                    <span class="stat__task__active">0</span>
+                </div>
+                <div>
+                    <p>Archive:</p>
+                    <span class="stat__task__archive">0</span>
+                </div>
+            </div>
+            <div class="stat stat__rt">
+                <h3>Random Thought</h3>
+
+                <div>
+                    <p>Active:</p>
+                    <span class="stat__rt__active"> 0 </span>
+                </div>
+                <div>
+                    <p>Archive:</p>
+                    <span class="stat__rt__archive">0</span>
+                </div>
+            </div>
+            <div class="stat stat__idea">
+                <h3>Idea</h3>
+
+                <div>
+                    <p>Active:</p>
+                    <span class="stat__idea__active">0</span>
+                </div>
+                <div>
+                    <p>Archive:</p>
+                    <span class="stat__idea__archive">0</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="archived hide"></section>
+    </body>
+</html>
