@@ -1,0 +1,205 @@
+@import url("./reset.css");
+
+:root {
+    --primary: #fe5f1e;
+    --text: black;
+}
+
+.showModal {
+    margin-bottom: 20px;
+}
+
+.noteInfo__wrapper {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 20px;
+    justify-content: center;
+}
+
+.noteInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.noteInfo .title {
+    font-size: 30px;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn {
+    padding: 5px 15px;
+    background-color: transparent;
+    color: var(--text);
+    font-weight: 600;
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* ============ form ============ */
+.createTask__wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 20px;
+}
+
+.createTask {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.createTask__close {
+    position: absolute;
+}
+
+.redText::placeholder {
+    color: #fe5f1e;
+}
+
+#title {
+    font-weight: 600;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#content {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.notesList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.note {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr) auto auto auto;
+    text-align: left;
+    border: 1px solid var(--text);
+    padding: 10px;
+    border-radius: 15px;
+    gap: 20px;
+    align-items: center;
+}
+
+.note__top {
+    margin-bottom: 20px;
+}
+
+.note__edit {
+    padding: 7px;
+    cursor: pointer;
+}
+
+.note__title {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.note__content {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.category {
+    font-size: 17px;
+    display: flex;
+    gap: 10px;
+}
+
+#categoryList {
+    color: #fe5f1e;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.note__dates {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+}
+
+.date {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #fe5f1e;
+    color: white;
+}
+
+.statistics {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+.spat {
+    display: flex;
+    justify-content: center;
+}
+
+.stat div {
+    cursor: pointer;
+    padding: 12px;
+    border: 1px solid var(--text);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.stat span {
+    margin-left: 10px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: #fe5f1e;
+    color: white;
+    cursor: pointer;
+}
+
+.archived {
+    margin-top: 20px;
+}
+
+.archived__item {
+    padding: 10px;
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.deleteAll {
+    cursor: pointer;
+}
