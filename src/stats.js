@@ -15,7 +15,7 @@ export const generateStats = () => {
         notes.archive.filter((i) => i.category === "Random Thought").length;
 
     document.querySelector(".stat__idea__active").innerHTML =
-        notes.active.filter((i) => i.category === "Task").length;
+        notes.active.filter((i) => i.category === "Idea").length;
 
     document.querySelector(".stat__idea__archive").innerHTML =
         notes.archive.filter((i) => i.category === "Idea").length;

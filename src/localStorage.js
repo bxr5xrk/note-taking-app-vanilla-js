@@ -1,4 +1,5 @@
 import { prepopulatedData } from "./data.js";
+import { generateStats } from "./stats.js";
 
 export const getItemsFromLS = () => {
     if (localStorage.getItem("notes") !== null) {
@@ -16,10 +17,12 @@ export const setItemsFromLS = (note) => {
 
 export const removeNote = (id) => {
     const notes = getItemsFromLS();
-    notes.active.forEach((note, index) => {
-        if (note.id === id) {
-            notes.active.splice(index, 1);
-        }
-        localStorage.setItem("notes", JSON.stringify(notes));
-    });
+    console.log(notes.active.filter((i) => i.id !== id));
+    notes.active = notes.active.filter((i) => i.id !== id);
+    localStorage.setItem(
+        "notes",
+        JSON.stringify({ ...notes, active: notes.active })
+    );
+    generateStats();
+    console.log(notes);
 };

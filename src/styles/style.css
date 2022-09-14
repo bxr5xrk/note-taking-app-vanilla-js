@@ -5,6 +5,13 @@
     --text: black;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
 .showModal {
     margin-bottom: 20px;
 }
@@ -43,6 +50,7 @@ h1 {
     border: 1px solid var(--primary);
     border-radius: 15px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -52,7 +60,8 @@ h1 {
 
 /* ============ form ============ */
 .createTask__wrapper {
-    position: absolute;
+    z-index: 20;
+    position: fixed;
     left: 0;
     top: 0;
     right: 0;
@@ -62,10 +71,11 @@ h1 {
 }
 
 .createTask {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -131,6 +141,7 @@ h1 {
     white-space: nowrap;
 }
 .category {
+    margin-left: 10px;
     font-size: 17px;
     display: flex;
     gap: 10px;
@@ -148,6 +159,14 @@ h1 {
     gap: 10px;
 }
 
+.note__delete {
+    cursor: pointer;
+}
+
+.note__archive {
+    cursor: pointer;
+}
+
 .date {
     padding: 5px;
     border-radius: 15px;
@@ -161,9 +180,10 @@ h1 {
     justify-content: space-between;
 }
 
-.spat {
+.stat {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .stat div {

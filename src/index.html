@@ -25,7 +25,12 @@
         <div class="createTask__wrapper hide">
             <button class="btn createTask__close">&times;</button>
             <form class="createTask">
-                <input type="text" id="title" placeholder="Enter title" />
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter title"
+                    minlength="2"
+                />
                 <div class="category">
                     <p>Select Category:</p>
                     <select name="list" id="categoryList">
@@ -41,64 +46,70 @@
                     cols="40"
                     rows="10"
                     placeholder="Enter content"
+                    maxlength="20"
+                    minlength="2"
                 ></textarea>
 
                 <button class="btn" type="submit">submit</button>
             </form>
         </div>
-        <h1>Note taking app</h1>
-        <button class="btn showModal">create note</button>
-        <div class="note note__top">
-            <span hidden>1</span>
-            <h3>Name</h3>
-            <h3>Created</h3>
-            <h3>Content</h3>
-            <h3>Category</h3>
-            <div><h3>Dates</h3></div>
-            <h3></h3>
-            <h3></h3>
-            <button class="deleteAll">Delele all</button>
+        <div class="wrapper">
+            <div>
+                <h1>Note taking app</h1>
+                <button class="btn showModal">create note</button>
+                <div class="note note__top">
+                    <span hidden>1</span>
+                    <h3>Name</h3>
+                    <h3>Created</h3>
+                    <h3>Content</h3>
+                    <h3>Category</h3>
+                    <div><h3>Dates</h3></div>
+                    <h3></h3>
+                    <h3></h3>
+                    <button class="deleteAll">Delete all</button>
+                </div>
+                <main class="notesList"></main>
+            </div>
+
+            <section class="statistics">
+                <div class="stat stat__task">
+                    <h3>Task</h3>
+
+                    <div>
+                        <p>Active:</p>
+                        <span class="stat__task__active">0</span>
+                    </div>
+                    <div>
+                        <p>Archive:</p>
+                        <span class="stat__task__archive">0</span>
+                    </div>
+                </div>
+                <div class="stat stat__rt">
+                    <h3>Random Thought</h3>
+
+                    <div>
+                        <p>Active:</p>
+                        <span class="stat__rt__active"> 0 </span>
+                    </div>
+                    <div>
+                        <p>Archive:</p>
+                        <span class="stat__rt__archive">0</span>
+                    </div>
+                </div>
+                <div class="stat stat__idea">
+                    <h3>Idea</h3>
+
+                    <div>
+                        <p>Active:</p>
+                        <span class="stat__idea__active">0</span>
+                    </div>
+                    <div>
+                        <p>Archive:</p>
+                        <span class="stat__idea__archive">0</span>
+                    </div>
+                </div>
+            </section>
         </div>
-        <main class="notesList"></main>
-
-        <section class="statistics">
-            <div class="stat stat__task">
-                <h3>Task</h3>
-
-                <div>
-                    <p>Active:</p>
-                    <span class="stat__task__active">0</span>
-                </div>
-                <div>
-                    <p>Archive:</p>
-                    <span class="stat__task__archive">0</span>
-                </div>
-            </div>
-            <div class="stat stat__rt">
-                <h3>Random Thought</h3>
-
-                <div>
-                    <p>Active:</p>
-                    <span class="stat__rt__active"> 0 </span>
-                </div>
-                <div>
-                    <p>Archive:</p>
-                    <span class="stat__rt__archive">0</span>
-                </div>
-            </div>
-            <div class="stat stat__idea">
-                <h3>Idea</h3>
-
-                <div>
-                    <p>Active:</p>
-                    <span class="stat__idea__active">0</span>
-                </div>
-                <div>
-                    <p>Archive:</p>
-                    <span class="stat__idea__archive">0</span>
-                </div>
-            </div>
-        </section>
 
         <section class="archived hide"></section>
     </body>

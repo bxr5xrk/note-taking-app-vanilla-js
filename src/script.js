@@ -2,7 +2,7 @@ import { listeners } from "./listeners.js";
 import { setItemsFromLS, getItemsFromLS, removeNote } from "./localStorage.js";
 import { setInnerActiveHTML, setInnerArchiveHTML } from "./setInnerHTML.js";
 import { generateStats } from "./stats.js";
-export const notes = getItemsFromLS();
+export let notes = getItemsFromLS();
 
 const noteTitle = document.getElementById("title");
 const noteContent = document.getElementById("content");
@@ -59,8 +59,12 @@ const setDetails = (title, body) => {
 const deleteNote = (e) => {
     const currentNote = e.target.closest(".note");
     currentNote.remove();
-    const id = currentNote.querySelector("span").textContent;
+    const id = currentNote.querySelector(".note__id").textContent;
     removeNote(Number(id));
+
+    notes = getItemsFromLS();
+
+    generateStats();
 };
 
 const clickHandler = (e) => {
@@ -217,12 +221,9 @@ const listenStats = () => {
         });
 };
 
-
-
 listeners(generateActiveNotes, clickHandler, formHandler, unArchHandler);
 listenStats();
 generateStats();
-
 
 const validate = (title, content) => {
     if (title && content) {

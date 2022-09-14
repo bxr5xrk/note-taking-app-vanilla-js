@@ -20,7 +20,7 @@ export const setInnerActiveHTML = (
     </div>
     <span class="note__archive">arch</span>
     <span class="note__edit">edit</span>
-    <button class="note__delete">Del</button>
+    <button class="note__delete">del</button>
   `;
 };
 
